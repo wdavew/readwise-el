@@ -130,6 +130,7 @@ MORE indicates that there are more results to fetch."
    (file-name-as-directory "highlights")
    (replace-regexp-in-string "[^A-Za-z0-9\_\-]" "" (replace-regexp-in-string "[/\s]" "-" (readwise--get-title book))) ".org"))
 
+;;;###autoload
 (defun readwise-pull ()
   "Import new highlights from Readwise into org-roam directory."
   (interactive)

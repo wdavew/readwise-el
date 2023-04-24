@@ -18,9 +18,11 @@
 ;;  Description
 ;;
 ;;; Code:
+(require 'cl-lib)
+(require 'request)
+(require 'org-roam)
+(require 'org-id)
 
-
-(provide 'readwise)
 
 (defconst readwise-url "https://readwise.io/api/v2/" "URL for Readwise API")
 
@@ -155,3 +157,6 @@ MORE indicates that there are more results to fetch."
    (readwise--get-last-sync)
    't)
   (message "Done syncing highlights."))
+
+(provide 'readwise)
+;;; readwise.el ends here

@@ -46,7 +46,7 @@
 (defun readwise--save-last-sync ()
   "Save the most recent sync time."
   (let ((ts (format-time-string "%Y-%m-%dT%H:%M:%SZ" (current-time))))
-    (with-file! readwise-sync-db-path
+    (with-temp-file readwise-sync-db-path
       (erase-buffer)
       (insert ts))))
 

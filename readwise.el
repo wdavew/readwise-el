@@ -24,8 +24,22 @@
 
 (defconst readwise-url "https://readwise.io/api/v2/" "URL for Readwise API")
 
-(defcustom readwise-sync-db-path "" "Path to the file where the last sync time is stored.")
-(defcustom readwise-api-token nil "Readwise API key")
+
+(defgroup readwise nil
+  "Customization options for readwise."
+  :group 'org
+  :prefix "readwise-")
+
+(defcustom readwise-sync-db-path ""
+  "Path to the file where the last sync time is stored."
+  :type 'string
+  :group 'readwise)
+
+(defcustom readwise-api-token nil
+  "Readwise API key"
+  :type 'string
+  :group 'readwise)
+
 
 (defun readwise--save-last-sync ()
   "Save the most recent sync time."

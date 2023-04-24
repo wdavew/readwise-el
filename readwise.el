@@ -105,8 +105,8 @@ MORE indicates that there are more results to fetch."
                       (insert (concat "- " .text))))
                   highlights)
             (widen)
-            (save-buffer))))))
-  (mapc #'import-highlights-for-book highlights))
+            (save-buffer)))))
+    (mapc #'import-highlights-for-book highlights)))
 
 (defun readwise--get-or-create-node-from-book (book)
   "Retrieve an org-mode note for BOOK, creating it if it doesn't exist. "

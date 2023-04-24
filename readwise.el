@@ -127,7 +127,7 @@ MORE indicates that there are more results to fetch."
         (org-roam-property-add "ROAM_REFS" (or .source_url .readwise_url))
         (org-roam-property-add "AUTHOR" (or .author "N/A"))
         (goto-char (point-max))
-        (insert (concat "#+title: " .title))
+        (insert (concat "#+title: " .title " " .author))
         (newline)
         (insert (concat "#+filetags: " ":ref:"))
         (newline)
@@ -146,7 +146,7 @@ MORE indicates that there are more results to fetch."
      (file-name-as-directory org-roam-directory)
      (file-name-as-directory "highlights")
      (replace-regexp-in-string "[^A-Za-z0-9\_\-]" ""
-                               (replace-regexp-in-string "[/\s]" "-" .title)) ".org")))
+                               (replace-regexp-in-string "[/\s]" "-" .title "-")) "-" .author ".org")))
 
 ;;;###autoload
 (defun readwise-pull ()

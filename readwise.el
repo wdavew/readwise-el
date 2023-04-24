@@ -141,10 +141,12 @@ MORE indicates that there are more results to fetch."
 
 (defun readwise--file-path-from-book (book)
   "Retrieve the file path for BOOK"
-  (concat
-   (file-name-as-directory org-roam-directory)
-   (file-name-as-directory "highlights")
-   (replace-regexp-in-string "[^A-Za-z0-9\_\-]" "" (replace-regexp-in-string "[/\s]" "-" (readwise--get-title book))) ".org"))
+  (let-alist book
+    (concat
+     (file-name-as-directory org-roam-directory)
+     (file-name-as-directory "highlights")
+     (replace-regexp-in-string "[^A-Za-z0-9\_\-]" ""
+                               (replace-regexp-in-string "[/\s]" "-" .title)) ".org")))
 
 ;;;###autoload
 (defun readwise-pull ()

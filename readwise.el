@@ -125,7 +125,7 @@ MORE indicates that there are more results to fetch."
           nil
         (org-roam-property-add "ID" id)
         (org-roam-property-add "ROAM_REFS" (or .source_url .readwise_url))
-        (org-roam-property-add "AUTHOR" (or l.author "N/A"))
+        (org-roam-property-add "AUTHOR" (or .author "N/A"))
         (goto-char (point-max))
         (insert (concat "#+title: " .title))
         (newline)
